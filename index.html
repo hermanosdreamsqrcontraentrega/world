@@ -857,7 +857,8 @@
         <p>PAGA AL RECIBIR CON ENVÍO GRATIS A TODO COLOMBIA</p>
     </section>
         
-
+    <!-- Main Content -->
+    <div class="container">
         <!-- Filtros -->
         <div class="filters">
             <div class="search-box">
@@ -875,8 +876,36 @@
                 <!-- Los productos se cargarán dinámicamente con JavaScript -->
             </div>
         </div>
+
+        <!-- Admin Access Section -->
+        <div class="admin-access">
+            <h2></h2>
+            <div class="admin-form">
+                <input type="password" id="adminKey" placeholder="Ingreso del afiliado">
+                <button id="adminAccessBtn">Acceder</button>
+            </div>
+        </div>
+
+        <!-- Supplier Table -->
+        <div class="supplier-table-container" id="supplierTableContainer">
+            <table class="supplier-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Precio Proveedor</th>
+                        <th>Precio Venta</th>
+                        <th>Proveedor</th>
+                        <th>Margen</th>
+                    </tr>
+                </thead>
+                <tbody id="supplierTableBody">
+                    <!-- Los datos se cargarán dinámicamente -->
+                </tbody>
+            </table>
+        </div>
     </div>
-    
 
     <!-- Cart Modal -->
     <div class="cart-modal" id="cartModal">
@@ -962,37 +991,6 @@
             </div>
         </div>
     </div>
-    
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Admin Access Section -->
-        <div class="admin-access">
-            <h2></h2>
-            <div class="admin-form">
-                <input type="password" id="adminKey" placeholder="Ingreso del afiliado">
-                <button id="adminAccessBtn">Acceder</button>
-            </div>
-        </div>
-    
-    <!-- Supplier Table -->
-        <div class="supplier-table-container" id="supplierTableContainer">
-            <table class="supplier-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Producto</th>
-                        <th>Categoría</th>
-                        <th>Precio Proveedor</th>
-                        <th>Precio Venta</th>
-                        <th>Proveedor</th>
-                        <th>Margen</th>
-                    </tr>
-                </thead>
-                <tbody id="supplierTableBody">
-                    <!-- Los datos se cargarán dinámicamente -->
-                </tbody>
-            </table>
-        </div>
 
     <!-- Footer -->
     <footer>
@@ -1030,11 +1028,11 @@
             {
                 id: 1,
                 title: "Omnilife Fem Plus Caja x 30 Sobres 195g",
-                price: 134.750,
+                price: 134750,
                 description: "Entrega inmediata. Opción de pago a 6 cuotas de 22.500 con 0% interés.",
                 category: "nutricion",
                 supplier: " Omnilife Colombia",
-                warehousePrice: 86.179,
+                warehousePrice: 86179,
                 productUrl: "https://ejemplo.com/productos/auriculares-inalambricos",
                 images: [
                     "img/1429653.png",
@@ -1042,103 +1040,101 @@
             },
             {
                 id: 2,
-                title: "Smartwatch Deportivo",
-                price: 199.99,
-                description: "Reloj inteligente con monitor de ritmo cardíaco y GPS",
+                title: "Omnilife Agua Blu 600ml Deportivo",
+                price: 82500,
+                description: "Agua mineralizada con electrolitos y minerales esenciales para deportistas",
                 category: "nutricion",
-                supplier: "tecnomarket cali cra 25 #12-45 3156789023",
-                warehousePrice: 79.99,
-                productUrl: "https://ejemplo.com/productos/smartwatch-deportivo",
+                supplier: "Omnilife Colombia",
+                warehousePrice: 52780,
+                productUrl: "https://ejemplo.com/productos/agua-blu",
                 images: [
-                    "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                    "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
                 ]
             },
             {
                 id: 3,
-                title: "Juego de Sartenes Antiadherentes",
-                price: 89.99,
-                description: "Set of 3 sartenes de diferentes tamaños",
+                title: "Omnilife Power Maker Frasco x 450g",
+                price: 112000,
+                description: "Suplemento nutricional para aumentar masa muscular y energía",
                 category: "nutricion",
-                supplier: "cocina express cll 10n #23-12 3204567890",
-                warehousePrice: 35.99,
-                productUrl: "https://ejemplo.com/productos/juego-sartenes",
+                supplier: "Omnilife Colombia",
+                warehousePrice: 71680,
+                productUrl: "https://ejemplo.com/productos/power-maker",
                 images: [
-                    "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1583778176476-4a8b8dc94b4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                    "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
                 ]
             },
             {
                 id: 4,
-                title: "Balón de Fútbol Oficial",
-                price: 49.99,
-                description: "Balón de fútbol tamaño oficial para competencia",
+                title: "Omnilife OmniPlus 30 Tabletas",
+                price: 98750,
+                description: "Multivitamínico completo con 36 nutrientes esenciales",
                 category: "nutricion",
-                supplier: "deportes cali av 6n #34-56 3189012345",
-                warehousePrice: 19.99,
-                productUrl: "https://ejemplo.com/productos/balon-futbol",
+                supplier: "Omnilife Colombia",
+                warehousePrice: 63200,
+                productUrl: "https://ejemplo.com/productos/omniplus",
                 images: [
-                    "https://images.unsplash.com/photo-1614632537197-38a17061c2bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1614632537190-874c3ef6d3d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                    "https://images.unsplash.com/photo-1614632537197-38a17061c2bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
                 ]
             },
             {
                 id: 5,
-                title: "Altavoz Bluetooth",
-                price: 79.99,
-                description: "Altavoz portátil resistente al agua con 12h de batería",
+                title: "Omnilife Magnate 30 Sobres",
+                price: 156000,
+                description: "Suplemento para mejorar el rendimiento físico y mental",
                 category: "nutricion",
-                supplier: "sonido digital cll 15 #45-67 3176543210",
-                warehousePrice: 32.99,
-                productUrl: "https://ejemplo.com/productos/altavoz-bluetooth",
+                supplier: "Omnilife Colombia",
+                warehousePrice: 99840,
+                productUrl: "https://ejemplo.com/productos/magnate",
                 images: [
-                    "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1546435770-a3e426bf472b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                    "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
                 ]
             },
             {
                 id: 6,
-                title: "Set de Cuchillos de Cocina",
-                price: 129.99,
-                description: "Juego de 6 cuchillos profesionales de acero inoxidable",
+                title: "Omnilife Thermogen Tea Caja x 30 Sobres",
+                price: 74500,
+                description: "Té termogénico para control de peso y metabolismo",
                 category: "nutricion",
-                supplier: "cuchilleria premium av 8n #12-34 3198765432",
-                warehousePrice: 49.99,
-                productUrl: "https://ejemplo.com/productos/set-cuchillos",
+                supplier: "Omnilife Colombia",
+                warehousePrice: 47680,
+                productUrl: "https://ejemplo.com/productos/thermogen-tea",
                 images: [
-                    "https://images.unsplash.com/photo-1594736797933-d0401ba94693?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1583384728630-1db93aa3dd99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                    "https://images.unsplash.com/photo-1594736797933-d0401ba94693?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
                 ]
             },
             {
                 id: 7,
-                title: "Mancuernas Ajustables",
-                price: 119.99,
-                description: "Par de mancuernas ajustables de 5 a 20 kg cada una",
+                title: "Omnilife Aloe Beta 946ml",
+                price: 68900,
+                description: "Bebida de sábila con betabel para digestión y detox",
                 category: "nutricion",
-                supplier: "fitness store cra 45 #78-90 3123456789",
-                warehousePrice: 49.99,
-                productUrl: "https://ejemplo.com/productos/mancuernas-ajustables",
+                supplier: "Omnilife Colombia",
+                warehousePrice: 44096,
+                productUrl: "https://ejemplo.com/productos/aloe-beta",
                 images: [
-                    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
                 ]
             },
             {
                 id: 8,
-                title: "Tablet 10 Pulgadas",
-                price: 299.99,
-                description: "Tablet con pantalla Full HD and 64GB de almacenamiento",
+                title: "Omnilife Fibra Néctar 946ml",
+                price: 72500,
+                description: "Bebida con fibra soluble para salud intestinal",
                 category: "nutricion",
-                supplier: "tech world cali cra 30 #56-78 3109876543",
-                warehousePrice: 149.99,
-                productUrl: "https://ejemplo.com/productos/tablet-10-pulgadas",
+                supplier: "Omnilife Colombia",
+                warehousePrice: 46400,
+                productUrl: "https://ejemplo.com/productos/fibra-nectar",
                 images: [
-                    "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                    "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
                 ]
             }
         ];
+
+        // Función para formatear precios en formato COP
+        function formatPrice(price) {
+            return 'COP $' + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
 
         // Variables globales
         let cart = [];
@@ -1195,7 +1191,7 @@
                         <a href="${product.productUrl}" class="product-link" target="_blank">
                             <h3 class="product-title">${product.title}</h3>
                         </a>
-                        <p class="product-price">$${product.price.toFixed(2)}</p>
+                        <p class="product-price">${formatPrice(product.price)}</p>
                         <p class="product-description">${product.description}</p>
                         <div class="product-actions">
                             <button class="add-to-cart" data-id="${product.id}">
@@ -1239,7 +1235,7 @@
                 <img src="${product.images[0]}" alt="${product.title}">
                 <div class="direct-purchase-info">
                     <h3>${product.title}</h3>
-                    <p class="product-price">$${product.price.toFixed(2)}</p>
+                    <p class="product-price">${formatPrice(product.price)}</p>
                 </div>
             `;
             
@@ -1329,7 +1325,7 @@
                     <img src="${item.image}" alt="${item.title}" width="50">
                     <div class="item-info">
                         <h4 class="item-title">${item.title}</h4>
-                        <p class="item-price">$${item.price.toFixed(2)} c/u</p>
+                        <p class="item-price">${formatPrice(item.price)} c/u</p>
                     </div>
                     <div class="item-quantity">
                         <button class="quantity-btn minus" data-id="${item.id}">-</button>
@@ -1337,12 +1333,12 @@
                         <button class="quantity-btn plus" data-id="${item.id}">+</button>
                         <span class="remove-item" data-id="${item.id}"><i class="fas fa-trash"></i></span>
                     </div>
-                    <div class="item-total">$${itemTotal.toFixed(2)}</div>
+                    <div class="item-total">${formatPrice(itemTotal)}</div>
                 `;
                 cartItems.appendChild(cartItem);
             });
             
-            cartTotal.textContent = `$${total.toFixed(2)}`;
+            cartTotal.textContent = formatPrice(total);
             
             // Agregar event listeners a los botones de cantidad y eliminar
             document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
@@ -1435,10 +1431,10 @@
             let message = "¡Hola! Quiero realizar la siguiente compra:\n\n";
             
             cart.forEach(item => {
-                message += `- ${item.title} x${item.quantity}: $${(item.price * item.quantity).toFixed(2)}\n`;
+                message += `- ${item.title} x${item.quantity}: ${formatPrice(item.price * item.quantity)}\n`;
             });
             
-            message += `\nTotal: $${cart.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2)}`;
+            message += `\nTotal: ${formatPrice(cart.reduce((total, item) => total + (item.price * item.quantity), 0))}`;
             message += `\n\nMi información de envío es:\n`;
             message += `Nombre: ${customerName.value}\n`;
             message += `Teléfono: ${customerPhone.value}\n`;
@@ -1462,10 +1458,10 @@
             
             message += "PRODUCTOS:\n";
             cart.forEach(item => {
-                message += `- ${item.title} x${item.quantity}: $${(item.price * item.quantity).toFixed(2)}\n`;
+                message += `- ${item.title} x${item.quantity}: ${formatPrice(item.price * item.quantity)}\n`;
             });
             
-            message += `\nTOTAL: $${cart.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2)}\n\n`;
+            message += `\nTOTAL: ${formatPrice(cart.reduce((total, item) => total + (item.price * item.quantity), 0))}\n\n`;
             message += "INFORMACIÓN DEL CLIENTE:\n";
             message += `Nombre: ${customerName.value}\n`;
             message += `Teléfono: ${customerPhone.value}\n`;
@@ -1486,8 +1482,8 @@
             
             let message = "¡Hola! Quiero comprar el siguiente producto:\n\n";
             
-            message += `- ${currentDirectProduct.title}: $${currentDirectProduct.price.toFixed(2)}\n`;
-            message += `\nTotal: $${currentDirectProduct.price.toFixed(2)}`;
+            message += `- ${currentDirectProduct.title}: ${formatPrice(currentDirectProduct.price)}\n`;
+            message += `\nTotal: ${formatPrice(currentDirectProduct.price)}`;
             message += `\n\nMi información de envío es:\n`;
             message += `Nombre: ${directCustomerName.value}\n`;
             message += `Teléfono: ${directCustomerPhone.value}\n`;
@@ -1510,9 +1506,9 @@
             let message = `Tienes un nuevo pedido directo de ${directCustomerName.value}:\n\n`;
             
             message += "PRODUCTO:\n";
-            message += `- ${currentDirectProduct.title}: $${currentDirectProduct.price.toFixed(2)}\n\n`;
+            message += `- ${currentDirectProduct.title}: ${formatPrice(currentDirectProduct.price)}\n\n`;
             
-            message += `TOTAL: $${currentDirectProduct.price.toFixed(2)}\n\n`;
+            message += `TOTAL: ${formatPrice(currentDirectProduct.price)}\n\n`;
             message += "INFORMACIÓN DEL CLIENTE:\n";
             message += `Nombre: ${directCustomerName.value}\n`;
             message += `Teléfono: ${directCustomerPhone.value}\n`;
@@ -1538,8 +1534,8 @@
                     <td>${product.id}</td>
                     <td>${product.title}</td>
                     <td>${product.category}</td>
-                    <td>$${product.warehousePrice.toFixed(2)}</td>
-                    <td>$${product.price.toFixed(2)}</td>
+                    <td>${formatPrice(product.warehousePrice)}</td>
+                    <td>${formatPrice(product.price)}</td>
                     <td>${product.supplier}</td>
                     <td>${margin}%</td>
                 `;
