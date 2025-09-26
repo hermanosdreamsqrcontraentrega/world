@@ -1024,112 +1024,282 @@
 
     <script>
         // Base de datos de productos (simulada)
-        const products = [
-            {
-                id: 1,
-                title: "Omnilife Fem Plus Caja x 30 Sobres 195g",
-                price: 134750,
-                description: "Entrega inmediata. Opción de pago a 6 cuotas de 22.500 con 0% interés.",
-                category: "nutricion",
-                supplier: " Omnilife Colombia",
-                warehousePrice: 86179,
-                productUrl: "https://ejemplo.com/productos/auriculares-inalambricos",
-                images: [
-                    "img/1429653.png",
-                ]
-            },
-            {
-                id: 2,
-                title: "Omnilife Agua Blu 600ml Deportivo",
-                price: 82500,
-                description: "Agua mineralizada con electrolitos y minerales esenciales para deportistas",
-                category: "nutricion",
-                supplier: "Omnilife Colombia",
-                warehousePrice: 52780,
-                productUrl: "https://ejemplo.com/productos/agua-blu",
-                images: [
-                    "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                ]
-            },
-            {
-                id: 3,
-                title: "Omnilife Power Maker Frasco x 450g",
-                price: 112000,
-                description: "Suplemento nutricional para aumentar masa muscular y energía",
-                category: "nutricion",
-                supplier: "Omnilife Colombia",
-                warehousePrice: 71680,
-                productUrl: "https://ejemplo.com/productos/power-maker",
-                images: [
-                    "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                ]
-            },
-            {
-                id: 4,
-                title: "Omnilife OmniPlus 30 Tabletas",
-                price: 98750,
-                description: "Multivitamínico completo con 36 nutrientes esenciales",
-                category: "nutricion",
-                supplier: "Omnilife Colombia",
-                warehousePrice: 63200,
-                productUrl: "https://ejemplo.com/productos/omniplus",
-                images: [
-                    "https://images.unsplash.com/photo-1614632537197-38a17061c2bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                ]
-            },
-            {
-                id: 5,
-                title: "Omnilife Magnate 30 Sobres",
-                price: 156000,
-                description: "Suplemento para mejorar el rendimiento físico y mental",
-                category: "nutricion",
-                supplier: "Omnilife Colombia",
-                warehousePrice: 99840,
-                productUrl: "https://ejemplo.com/productos/magnate",
-                images: [
-                    "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                ]
-            },
-            {
-                id: 6,
-                title: "Omnilife Thermogen Tea Caja x 30 Sobres",
-                price: 74500,
-                description: "Té termogénico para control de peso y metabolismo",
-                category: "nutricion",
-                supplier: "Omnilife Colombia",
-                warehousePrice: 47680,
-                productUrl: "https://ejemplo.com/productos/thermogen-tea",
-                images: [
-                    "https://images.unsplash.com/photo-1594736797933-d0401ba94693?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                ]
-            },
-            {
-                id: 7,
-                title: "Omnilife Aloe Beta 946ml",
-                price: 68900,
-                description: "Bebida de sábila con betabel para digestión y detox",
-                category: "nutricion",
-                supplier: "Omnilife Colombia",
-                warehousePrice: 44096,
-                productUrl: "https://ejemplo.com/productos/aloe-beta",
-                images: [
-                    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                ]
-            },
-            {
-                id: 8,
-                title: "Omnilife Fibra Néctar 946ml",
-                price: 72500,
-                description: "Bebida con fibra soluble para salud intestinal",
-                category: "nutricion",
-                supplier: "Omnilife Colombia",
-                warehousePrice: 46400,
-                productUrl: "https://ejemplo.com/productos/fibra-nectar",
-                images: [
-                    "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                ]
-            }
-        ];
+        const products = ```json
+[
+    {
+        "id": 1,
+        "title": "Omnilife Agua Blu 600ml",
+        "price": 4200,
+        "description": "Opción de pago a 6 cuotas de 700 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 2688,
+        "productUrl": "https://ejemplo.com/productos/omnilife-agua-blu-600ml",
+        "images": [
+            "img/omnilife-agua-blu.png"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Omnilife Agua Blu Supreme 1.5L",
+        "price": 8200,
+        "description": "Opción de pago a 6 cuotas de 1.367 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 5248,
+        "productUrl": "https://ejemplo.com/productos/omnilife-agua-blu-supreme-1.5l",
+        "images": [
+            "img/omnilife-agua-blu-supreme.png"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Omnilife Aloe Beta",
+        "price": 63000,
+        "description": "Opción de pago a 6 cuotas de 10.500 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 40320,
+        "productUrl": "https://ejemplo.com/productos/omnilife-aloe-beta",
+        "images": [
+            "img/omnilife-aloe-beta.png"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Omnilife Aloe Beta",
+        "price": 13000,
+        "description": "Opción de pago a 6 cuotas de 2.167 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 8320,
+        "productUrl": "https://ejemplo.com/productos/omnilife-aloe-beta-2",
+        "images": [
+            "img/omnilife-aloe-beta.png"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Omnilife Aqtúa Supreme Caja 30 Sobres 150g",
+        "price": 195000,
+        "description": "Opción de pago a 6 cuotas de 32.500 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 124800,
+        "productUrl": "https://ejemplo.com/productos/omnilife-aqtua-supreme",
+        "images": [
+            "img/omnilife-aqtua-supreme.png"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Omnilife Biocros Supreme",
+        "price": 120000,
+        "description": "Opción de pago a 6 cuotas de 20.000 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 76800,
+        "productUrl": "https://ejemplo.com/productos/omnilife-biocros-supreme",
+        "images": [
+            "img/omnilife-biocros-supreme.png"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Omnilife Cognos",
+        "price": 126000,
+        "description": "Opción de pago a 6 cuotas de 21.000 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 80640,
+        "productUrl": "https://ejemplo.com/productos/omnilife-cognos",
+        "images": [
+            "img/omnilife-cognos.png"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Omnilife Combo Colon × 1 Mes",
+        "price": 468500,
+        "description": "Opción de pago a 6 cuotas de 78.083 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 299840,
+        "productUrl": "https://ejemplo.com/productos/omnilife-combo-colon",
+        "images": [
+            "img/omnilife-combo-colon.png"
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Omnilife Dolce Vita Supreme",
+        "price": 153000,
+        "description": "Opción de pago a 6 cuotas de 25.500 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 97920,
+        "productUrl": "https://ejemplo.com/productos/omnilife-dolce-vita-supreme",
+        "images": [
+            "img/omnilife-dolce-vita-supreme.png"
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Omnilife Ego 10",
+        "price": 13000,
+        "description": "Opción de pago a 6 cuotas de 2.167 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 8320,
+        "productUrl": "https://ejemplo.com/productos/omnilife-ego-10",
+        "images": [
+            "img/omnilife-ego-10.png"
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Omnilife Ego Life Supreme",
+        "price": 84000,
+        "description": "Opción de pago a 6 cuotas de 14.000 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 53760,
+        "productUrl": "https://ejemplo.com/productos/omnilife-ego-life-supreme",
+        "images": [
+            "img/omnilife-ego-life-supreme.png"
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Omnilife Ego Plant",
+        "price": 13000,
+        "description": "Opción de pago a 6 cuotas de 2.167 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 8320,
+        "productUrl": "https://ejemplo.com/productos/omnilife-ego-plant",
+        "images": [
+            "img/omnilife-ego-plant.png"
+        ]
+    },
+    {
+        "id": 13,
+        "title": "Omnilife Estop Plus",
+        "price": 252000,
+        "description": "Opción de pago a 6 cuotas de 42.000 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 161280,
+        "productUrl": "https://ejemplo.com/productos/omnilife-estop-plus",
+        "images": [
+            "img/omnilife-estop-plus.png"
+        ]
+    },
+    {
+        "id": 14,
+        "title": "Omnilife Fem Plus 195g",
+        "price": 135000,
+        "description": "Opción de pago a 6 cuotas de 22.500 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 86400,
+        "productUrl": "https://ejemplo.com/productos/omnilife-fem-plus",
+        "images": [
+            "img/omnilife-fem-plus.png"
+        ]
+    },
+    {
+        "id": 15,
+        "title": "Omnilife Fiber N Plus Supreme Sachet 450g",
+        "price": 160000,
+        "description": "Opción de pago a 6 cuotas de 26.667 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 102400,
+        "productUrl": "https://ejemplo.com/productos/omnilife-fiber-n-plus-supreme",
+        "images": [
+            "img/omnilife-fiber-n-plus-supreme.png"
+        ]
+    },
+    {
+        "id": 16,
+        "title": "Omnilife Flu-Y Bote de 60 Capsulas",
+        "price": 103000,
+        "description": "Opción de pago a 6 cuotas de 17.167 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 65920,
+        "productUrl": "https://ejemplo.com/productos/omnilife-flu-y",
+        "images": [
+            "img/omnilife-flu-y.png"
+        ]
+    },
+    {
+        "id": 17,
+        "title": "Omnilife Homo Plus Caja de 30 sobres",
+        "price": 135000,
+        "description": "Opción de pago a 6 cuotas de 22.500 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 86400,
+        "productUrl": "https://ejemplo.com/productos/omnilife-homo-plus",
+        "images": [
+            "img/omnilife-homo-plus.png"
+        ]
+    },
+    {
+        "id": 18,
+        "title": "Omnilife Kit 500 puntos Colombia",
+        "price": 887000,
+        "description": "Opción de pago a 6 cuotas de 147.833 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 567680,
+        "productUrl": "https://ejemplo.com/productos/omnilife-kit-500-puntos",
+        "images": [
+            "img/omnilife-kit-500-puntos.png"
+        ]
+    },
+    {
+        "id": 19,
+        "title": "Omnilife Kolina de 200 ml",
+        "price": 13000,
+        "description": "Opción de pago a 6 cuotas de 2.167 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 8320,
+        "productUrl": "https://ejemplo.com/productos/omnilife-kolina",
+        "images": [
+            "img/omnilife-kolina.png"
+        ]
+    },
+    {
+        "id": 20,
+        "title": "Omnilife Omniost caja de 30 sobres",
+        "price": 148000,
+        "description": "Opción de pago a 6 cuotas de 24.667 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 94720,
+        "productUrl": "https://ejemplo.com/productos/omnilife-omniost",
+        "images": [
+            "img/omnilife-omniost.png"
+        ]
+    },
+    {
+        "id": 21,
+        "title": "Omnilife Omniplus Caja 30 Sobres/600ml",
+        "price": 185000,
+        "description": "Opción de pago a 6 cuotas de 30.833 con 0% interés.",
+        "category": "nutricion",
+        "supplier": "Omnilife Colombia",
+        "warehousePrice": 118400,
+        "productUrl": "https://ejemplo.com/productos/omnilife-omniplus",
+        "images": [
+            "img/omnilife-omniplus.png"
+        ]
+    }
+];
 
         // Función para formatear precios en formato COP
         function formatPrice(price) {
