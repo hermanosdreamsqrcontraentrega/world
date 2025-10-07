@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Marketplace - Contraentrega Cali, Valle Del Cauca, Colombia</title>
+    <title>Auriculares Inalámbricos Premium | CaliValle</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -14,8 +14,9 @@
             --color-gris-medio: #e0e0e0;
             --color-gris-oscuro: #333333;
             --color-verde: #25D366;
-            --color-azul: #007bff;
-            --color-rojo: #dc3545;
+            --color-azul: #3498db;
+            --color-rojo: #e74c3c;
+            --color-morado: #9b59b6;
         }
         
         * {
@@ -29,7 +30,7 @@
             background-color: var(--color-blanco);
             color: var(--color-negro);
             line-height: 1.6;
-            font-size: 16px; /* Tamaño de fuente base para evitar zoom */
+            font-size: 16px;
         }
         
         /* Header */
@@ -87,25 +88,6 @@
             font-weight: bold;
         }
         
-        /* Hero Section */
-        .hero {
-            background-color: var(--color-gris-claro);
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .hero h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
         /* Main Content */
         .container {
             max-width: 1200px;
@@ -113,115 +95,59 @@
             padding: 0 1rem;
         }
         
-        /* Filtros */
-        .filters {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 1rem;
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: var(--color-gris-oscuro);
         }
         
-        .search-box {
-            flex-grow: 1;
-            max-width: 500px;
+        .breadcrumb a {
+            color: var(--color-gris-oscuro);
+            text-decoration: none;
         }
         
-        .search-box input {
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Product Detail */
+        .product-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .product-gallery {
+            position: relative;
+        }
+        
+        .main-image {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid var(--color-gris-medio);
-            border-radius: 4px;
-            font-family: 'Libre Baskerville', serif;
-            font-size: 16px; /* Prevenir zoom en iOS */
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
         }
         
-        .category-filter {
+        .thumbnail-container {
             display: flex;
             gap: 0.5rem;
-            flex-wrap: wrap;
         }
         
-        .category-btn {
-            background: none;
-            border: 1px solid var(--color-negro);
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            font-family: 'Libre Baskerville', serif;
-            transition: all 0.3s;
-            border-radius: 4px;
-            font-size: 0.9rem;
-        }
-        
-        .category-btn:hover, .category-btn.active {
-            background-color: var(--color-negro);
-            color: var(--color-blanco);
-        }
-        
-        /* Product Grid */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-        
-        .product-card {
-            border: 1px solid var(--color-gris-medio);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .product-image-container {
-            position: relative;
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .product-image {
-            width: 100%;
-            height: 100%;
+        .thumbnail {
+            width: 80px;
+            height: 80px;
             object-fit: cover;
-            border-bottom: 1px solid var(--color-gris-medio);
-            transition: opacity 0.3s;
-        }
-        
-        .image-nav {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 10px;
-            transform: translateY(-50%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            display: none; /* Ocultar navegación de imágenes para simplificar */
-        }
-        
-        .product-image-container:hover .image-nav {
-            opacity: 1;
-        }
-        
-        .nav-btn {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
+            border-radius: 4px;
             cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+        
+        .thumbnail.active {
+            border-color: var(--color-negro);
         }
         
         .product-info {
@@ -229,40 +155,50 @@
         }
         
         .product-title {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            margin-bottom: 1rem;
             font-weight: 700;
-            min-height: 2.8rem;
         }
         
         .product-price {
-            font-size: 1.2rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--color-gris-oscuro);
         }
         
         .product-description {
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
             color: var(--color-gris-oscuro);
-            min-height: 2.8rem;
         }
-
-        /* Nuevos estilos para botones arriba y videos */
+        
+        .product-features {
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-features ul {
+            padding-left: 1.5rem;
+        }
+        
+        .product-features li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Botones arriba de la descripción */
         .product-actions-top {
             display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
         
         .add-to-cart, .buy-now {
-            padding: 0.7rem;
+            padding: 1rem 2rem;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-family: 'Libre Baskerville', serif;
-            font-size: 0.9rem;
+            font-size: 1rem;
             transition: background-color 0.3s;
             flex: 1;
             text-align: center;
@@ -270,6 +206,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 0.5rem;
         }
         
         .add-to-cart {
@@ -289,17 +226,19 @@
         .buy-now:hover {
             background-color: var(--color-negro);
         }
-
+        
         /* Estilos para videos */
         .video-container {
-            margin: 1rem 0;
+            margin: 2rem 0;
         }
         
         .video-title {
-            font-size: 1rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             color: var(--color-gris-oscuro);
+            border-bottom: 2px solid var(--color-gris-medio);
+            padding-bottom: 0.5rem;
         }
         
         .video-wrapper {
@@ -307,9 +246,10 @@
             width: 100%;
             height: 0;
             padding-bottom: 56.25%; /* Relación 16:9 */
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         .video-wrapper iframe {
@@ -319,17 +259,6 @@
             width: 100%;
             height: 100%;
             border: none;
-        }
-        
-        /* Enlaces de producto */
-        .product-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        
-        .product-link:hover .product-title {
-            text-decoration: underline;
         }
         
         /* Cart Modal */
@@ -531,7 +460,7 @@
             border: 1px solid var(--color-gris-medio);
             border-radius: 4px;
             font-family: 'Libre Baskerville', serif;
-            font-size: 16px; /* Prevenir zoom en iOS */
+            font-size: 16px;
         }
         
         .checkout-buttons {
@@ -574,7 +503,7 @@
         }
         
         .email-btn:hover {
-            background-color: #bd2130;
+            background-color: #c0392b;
         }
         
         .email-btn:disabled {
@@ -656,91 +585,6 @@
             margin-bottom: 0;
         }
         
-        /* Admin Access Section */
-        .admin-access {
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background-color: var(--color-gris-claro);
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .admin-access h2 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .admin-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        
-        .admin-form input {
-            padding: 0.8rem;
-            border: 1px solid var(--color-gris-medio);
-            border-radius: 4px;
-            font-family: 'Libre Baskerville', serif;
-            font-size: 16px;
-        }
-        
-        .admin-form button {
-            padding: 0.8rem;
-            background-color: var(--color-negro);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: 'Libre Baskerville', serif;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-        }
-        
-        .admin-form button:hover {
-            background-color: var(--color-gris-oscuro);
-        }
-        
-        /* Supplier Table */
-        .supplier-table-container {
-            display: none;
-            margin: 2rem 0;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            border: 1px solid var(--color-gris-medio);
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .supplier-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 800px;
-        }
-        
-        .supplier-table th,
-        .supplier-table td {
-            padding: 0.8rem;
-            text-align: left;
-            border-bottom: 1px solid var(--color-gris-medio);
-        }
-        
-        .supplier-table th {
-            background-color: var(--color-gris-claro);
-            font-weight: 700;
-            position: sticky;
-            top: 0;
-        }
-        
-        .supplier-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .supplier-table tr:hover {
-            background-color: rgba(0, 0, 0, 0.02);
-        }
-        
         /* Footer */
         footer {
             background-color: var(--color-negro);
@@ -798,33 +642,23 @@
         }
         
         /* Responsive */
+        @media (max-width: 968px) {
+            .product-detail {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-image {
+                height: 300px;
+            }
+        }
+        
         @media (max-width: 768px) {
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-                overflow-x: auto;
-                padding-bottom: 1rem;
-            }
-            
-            .filters {
-                flex-direction: column;
-            }
-            
-            .category-filter {
-                justify-content: center;
-            }
-            
-            .category-btn {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
-            }
-            
-            .hero h1 {
+            .product-title {
                 font-size: 1.8rem;
             }
             
-            .hero p {
-                font-size: 1rem;
+            .product-price {
+                font-size: 1.5rem;
             }
             
             .product-actions-top {
@@ -835,30 +669,29 @@
                 width: 95%;
                 padding: 1rem;
             }
-            
-            .footer-content {
-                flex-direction: column;
-            }
-            
-            /* Ajustes para evitar zoom en formularios móviles */
-            input, select, textarea {
-                font-size: 16px !important;
-            }
-            
-            .checkout-buttons {
-                gap: 0.5rem;
-            }
-            
-            .checkout-btn {
-                padding: 0.8rem;
-                font-size: 0.9rem;
-            }
         }
         
         @media (max-width: 480px) {
             .header-container {
                 flex-direction: row;
-                gap: 1rem;
+            }
+            
+            .product-title {
+                font-size: 1.5rem;
+            }
+            
+            .product-price {
+                font-size: 1.3rem;
+            }
+            
+            .add-to-cart, .buy-now {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .thumbnail {
+                width: 60px;
+                height: 60px;
             }
             
             .cart-item {
@@ -869,28 +702,6 @@
             
             .item-quantity {
                 align-self: flex-end;
-            }
-            
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.8rem;
-            }
-            
-            .product-card {
-                min-width: 160px;
-            }
-            
-            .product-title {
-                font-size: 1rem;
-            }
-            
-            .product-price {
-                font-size: 1.1rem;
-            }
-            
-            .add-to-cart, .buy-now {
-                padding: 0.6rem;
-                font-size: 0.8rem;
             }
         }
         
@@ -907,44 +718,14 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             transition: opacity 0.5s;
         }
-        
-        /* Scroll horizontal en móviles */
-        .scroll-container {
-            overflow-x: auto;
-            padding-bottom: 1rem;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        .scroll-content {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        @media (min-width: 769px) {
-            .scroll-container {
-                overflow-x: visible;
-            }
-            
-            .scroll-content {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-        }
-        
-        /* Estilo específico para prevenir zoom en iOS */
-        @media screen and (max-width: 767px) {
-            input, textarea, select {
-                font-size: 16px !important;
-            }
-        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="header-container">
-            <a href="#" class="logo">
-                <img src="https://qrcontraentrega.com/img/c.jpg" alt="Logo CaliValle" class="logo-img">
+            <a href="catalogo.html" class="logo">
+                <img src="https://qrcontraentrega.com/wp-content/uploads/2025/09/IMG_0736.png" alt="Logo CaliValle" class="logo-img">
             </a>
             <div class="cart-icon" id="cartIcon">
                 <i class="fas fa-shopping-cart"></i>
@@ -953,58 +734,72 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>MARKETPLACE</h1>
-        <p>CALI, VALLE DEL CAUCA, COLOMBIA</p>
-    </section>
-        
     <!-- Main Content -->
     <div class="container">
-        <!-- Filtros -->
-        <div class="filters">
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Buscar productos y servicios de @hermanosdreamsco...">
-            </div>
-            <div class="category-filter">
-                <button class="category-btn active" data-category="todo">Todo</button>
-            </div>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="catalogo.html">Catálogo</a> > <a href="catalogo.html?category=tecnologia">Tecnología</a> > Auriculares Inalámbricos Premium
         </div>
-
-        <!-- Product Grid -->
-        <div class="scroll-container">
-            <div class="products-grid" id="productsGrid">
-                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+        
+        <!-- Product Detail -->
+        <div class="product-detail">
+            <div class="product-gallery">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                     alt="Auriculares Inalámbricos Premium" class="main-image" id="mainImage">
+                <div class="thumbnail-container">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                         alt="Auriculares Inalámbricos Premium - Vista 1" class="thumbnail active" data-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80">
+                    <img src="https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                         alt="Auriculares Inalámbricos Premium - Vista 2" class="thumbnail" data-image="https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                         alt="Auriculares Inalámbricos Premium - Vista 3" class="thumbnail" data-image="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80">
+                </div>
             </div>
-        </div>
-
-        <!-- Admin Access Section -->
-        <div class="admin-access">
-            <h2></h2>
-            <div class="admin-form">
-                <input type="password" id="adminKey" placeholder="Ingreso de afiliados">
-                <button id="adminAccessBtn">Acceder</button>
+            
+            <div class="product-info">
+                <h1 class="product-title">Auriculares Inalámbricos Premium</h1>
+                <p class="product-price">$249.900</p>
+                
+                <!-- Botones arriba de la descripción -->
+                <div class="product-actions-top">
+                    <button class="add-to-cart" id="addToCart">
+                        <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                    </button>
+                    <button class="buy-now" id="buyNow">
+                        <i class="fas fa-shopping-bag"></i> Comprar Ahora
+                    </button>
+                </div>
+                
+                <div class="product-description">
+                    <p>Experimenta el sonido como nunca antes con nuestros auriculares inalámbricos de última generación. Con cancelación de ruido activa, podrás sumergirte completamente en tu música favorita sin distracciones del mundo exterior.</p>
+                </div>
+                
+                <div class="product-features">
+                    <h3>Características principales:</h3>
+                    <ul>
+                        <li>Cancelación de ruido activa de última generación</li>
+                        <li>Hasta 30 horas de batería con carga rápida</li>
+                        <li>Conexión Bluetooth 5.2 estable y de baja latencia</li>
+                        <li>Resistencia al agua IPX5</li>
+                        <li>Micrófono incorporado con cancelación de ruido para llamadas claras</li>
+                        <li>Controles táctiles intuitivos y asistente de voz</li>
+                        <li>Sonido Hi-Fi con graves profundos y agudos cristalinos</li>
+                    </ul>
+                </div>
+                
+                <!-- Videos de TikTok y YouTube -->
+                <div class="video-container">
+                    <div class="video-title">Video demostrativo en TikTok:</div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.tiktok.com/embed/v2/7358021123456789012" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="video-title">Review completo en YouTube:</div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Supplier Table -->
-        <div class="supplier-table-container" id="supplierTableContainer">
-            <table class="supplier-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Producto</th>
-                        <th>Categoría</th>
-                        <th>Precio Proveedor</th>
-                        <th>Precio Venta</th>
-                        <th>Proveedor</th>
-                        <th>Margen</th>
-                    </tr>
-                </thead>
-                <tbody id="supplierTableBody">
-                    <!-- Los datos se cargarán dinámicamente -->
-                </tbody>
-            </table>
         </div>
     </div>
 
@@ -1183,81 +978,12 @@
     </footer>
 
     <script>
-        // Base de datos de productos (simulada) - TODOS CON LA IMAGEN DE GOOGLE DRIVE
-        const products = [
-            {
-                "id": 142,
-                "title": "EGO PLANT BOTELLA 200 ML",
-                "price": 12800,
-                "description": "Opción de pago a 6 cuotas de 2.133 con 0% interés.",
-                "category": "todo",
-                "supplier": "Omnilife Colombia",
-                "warehousePrice": 8192,
-                "productUrl": "ego-plant-botella-200ml.html",
-                "images": [
-                    "https://drive.google.com/thumbnail?id=1CRCYhdnU2ZC16ze2dPqoCPREq6Sh5VVD&sz=w1000"
-                ],
-                "tiktokVideo": "https://www.tiktok.com/embed/v2/7358021123456789012",
-                "youtubeVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ"
-            },
-            {
-                "id": 143,
-                "title": "OMNILIFE F PLUS",
-                "price": 134750,
-                "description": "Opción de pago a 6 cuotas de 22.458 con 0% interés.",
-                "category": "todo",
-                "supplier": "Omnilife Colombia",
-                "warehousePrice": 86240,
-                "productUrl": "https://ejemplo.com/productos/omnilife-f-plus",
-                "images": [
-                    "https://drive.google.com/thumbnail?id=1CRCYhdnU2ZC16ze2dPqoCPREq6Sh5VVD&sz=w1000"
-                ],
-                "tiktokVideo": "https://www.tiktok.com/embed/v2/7358021123456789013",
-                "youtubeVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ"
-            },
-            {
-                "id": 22,
-                "title": "SET DE BROCHAS PARA OJOS Y LABIOS",
-                "price": 112900,
-                "description": "Opción de pago a 6 cuotas de 18.817 con 0% interés.",
-                "category": "todo",
-                "supplier": "Seytú",
-                "warehousePrice": 72256,
-                "productUrl": "https://ejemplo.com/productos/set-brochas-ojos-labios",
-                "images": [
-                    "https://drive.google.com/thumbnail?id=1CRCYhdnU2ZC16ze2dPqoCPREq6Sh5VVD&sz=w1000"
-                ],
-                "tiktokVideo": "https://www.tiktok.com/embed/v2/7358021123456789022",
-                "youtubeVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ"
-            },
-            {
-                "id": 23,
-                "title": "ESPONJA PARA MAQUILLAJE LANZAMIENTO",
-                "price": 40300,
-                "description": "Opción de pago a 6 cuotas de 6.717 con 0% interés.",
-                "category": "todo",
-                "supplier": "Seytú",
-                "warehousePrice": 25792,
-                "productUrl": "https://ejemplo.com/productos/esponja-maquillaje",
-                "images": [
-                    "https://drive.google.com/thumbnail?id=1CRCYhdnU2ZC16ze2dPqoCPREq6Sh5VVD&sz=w1000"
-                ],
-                "tiktokVideo": "https://www.tiktok.com/embed/v2/7358021123456789023",
-                "youtubeVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ"
-            }
-        ];
-
-        // Función para formatear precios en formato COP
-        function formatPrice(price) {
-            return 'COP $' + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-        }
-
         // Variables globales
         let cart = [];
         let currentDirectProduct = null;
         let selectedShipping = 0; // Costo de envío seleccionado
-        const ADMIN_KEY = "proveedor2024"; // Clave estática para acceso a precios de proveedor
         
+        // Elementos del DOM
         const cartIcon = document.getElementById('cartIcon');
         const cartCount = document.getElementById('cartCount');
         const cartModal = document.getElementById('cartModal');
@@ -1267,9 +993,6 @@
         const whatsappBtn = document.getElementById('whatsappBtn');
         const emailBtn = document.getElementById('emailBtn');
         const continueShopping = document.getElementById('continueShopping');
-        const productsGrid = document.getElementById('productsGrid');
-        const searchInput = document.getElementById('searchInput');
-        const categoryBtns = document.querySelectorAll('.category-btn');
         const customerName = document.getElementById('customerName');
         const customerPhone = document.getElementById('customerPhone');
         const customerAddress = document.getElementById('customerAddress');
@@ -1287,145 +1010,59 @@
         const directEmailBtn = document.getElementById('directEmailBtn');
         const cancelDirectPurchase = document.getElementById('cancelDirectPurchase');
         
-        // Elementos para acceso de administrador
-        const adminKeyInput = document.getElementById('adminKey');
-        const adminAccessBtn = document.getElementById('adminAccessBtn');
-        const supplierTableContainer = document.getElementById('supplierTableContainer');
-        const supplierTableBody = document.getElementById('supplierTableBody');
+        // Botones de producto
+        const addToCartButton = document.getElementById('addToCart');
+        const buyNowButton = document.getElementById('buyNow');
+        
+        // Información del producto actual
+        const currentProduct = {
+            id: 1,
+            title: "Auriculares Inalámbricos Premium",
+            price: 249900,
+            description: "Auriculares con cancelación de ruido activa y 30h de batería",
+            image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+        };
 
-        // Cargar productos en la página
-        function loadProducts(productsToLoad) {
-            productsGrid.innerHTML = '';
-            
-            productsToLoad.forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.className = 'product-card';
-                productCard.innerHTML = `
-                    <a href="${product.productUrl}" class="product-link" target="_blank">
-                        <div class="product-image-container">
-                            <img src="${product.images[0]}" alt="${product.title}" class="product-image" data-product-id="${product.id}" data-image-index="0">
-                        </div>
-                    </a>
-                    <div class="product-info">
-                        <a href="${product.productUrl}" class="product-link" target="_blank">
-                            <h3 class="product-title">${product.title}</h3>
-                        </a>
-                        <p class="product-price">${formatPrice(product.price)}</p>
-                        
-                        <!-- Botones arriba de la descripción -->
-                        <div class="product-actions-top">
-                            <button class="add-to-cart" data-id="${product.id}">
-                                <i class="fas fa-cart-plus"></i> Añadir al Carrito
-                            </button>
-                            <button class="buy-now" data-id="${product.id}">
-                                <i class="fas fa-shopping-bag"></i> Comprar Ahora
-                            </button>
-                        </div>
-                        
-                        <p class="product-description">${product.description}</p>
-                        
-                        <!-- Videos de TikTok y YouTube -->
-                        <div class="video-container">
-                            <div class="video-title">Video en TikTok:</div>
-                            <div class="video-wrapper">
-                                <iframe src="${product.tiktokVideo}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            
-                            <div class="video-title">Video en YouTube:</div>
-                            <div class="video-wrapper">
-                                <iframe src="${product.youtubeVideo}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                productsGrid.appendChild(productCard);
-            });
-            
-            // Agregar event listeners a los botones de agregar al carrito
-            document.querySelectorAll('.add-to-cart').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    const productId = parseInt(e.target.closest('.add-to-cart').getAttribute('data-id'));
-                    addToCart(productId);
-                });
-            });
-            
-            // Agregar event listeners a los botones de comprar ahora
-            document.querySelectorAll('.buy-now').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    const productId = parseInt(e.target.closest('.buy-now').getAttribute('data-id'));
-                    openDirectPurchase(productId);
-                });
-            });
+        // Función para formatear precios en formato COP
+        function formatPrice(price) {
+            return 'COP $' + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
 
-        // Abrir modal para compra directa
-        function openDirectPurchase(productId) {
-            const product = products.find(p => p.id === productId);
-            if (!product) return;
-            
-            currentDirectProduct = product;
-            
-            // Mostrar información del producto en el modal
-            directPurchaseProduct.innerHTML = `
-                <img src="${product.images[0]}" alt="${product.title}">
-                <div class="direct-purchase-info">
-                    <h3>${product.title}</h3>
-                    <p class="product-price">${formatPrice(product.price)}</p>
-                </div>
-            `;
-            
-            // Limpiar formulario
-            directCustomerName.value = '';
-            directCustomerPhone.value = '';
-            directCustomerAddress.value = '';
-            directCustomerCity.value = '';
-            directWhatsappBtn.disabled = true;
-            directEmailBtn.disabled = true;
-            
-            // Resetear opción de envío
-            document.getElementById('direct-shipping-priority').checked = true;
-            selectedShipping = 0;
-            updateShippingOptions();
-            
-            // Mostrar modal
-            directPurchaseModal.style.display = 'flex';
-        }
-
-        // Filtrar productos
-        function filterProducts() {
-            const searchText = searchInput.value.toLowerCase();
-            const activeCategory = document.querySelector('.category-btn.active').getAttribute('data-category');
-            
-            const filteredProducts = products.filter(product => {
-                const matchesSearch = product.title.toLowerCase().includes(searchText) || 
-                                     product.description.toLowerCase().includes(searchText);
-                const matchesCategory = activeCategory === 'all' || product.category === activeCategory;
+        // Funcionalidad para cambiar imágenes al hacer clic en miniaturas
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('mainImage');
+        
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                // Remover clase active de todas las miniaturas
+                thumbnails.forEach(t => t.classList.remove('active'));
                 
-                return matchesSearch && matchesCategory;
+                // Agregar clase active a la miniatura clickeada
+                thumbnail.classList.add('active');
+                
+                // Cambiar la imagen principal
+                mainImage.src = thumbnail.getAttribute('data-image');
             });
-            
-            loadProducts(filteredProducts);
-        }
-
+        });
+        
         // Agregar producto al carrito
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
+        function addToCart(productId, productTitle, productPrice, productImage) {
             const existingItem = cart.find(item => item.id === productId);
             
             if (existingItem) {
                 existingItem.quantity += 1;
             } else {
                 cart.push({
-                    id: product.id,
-                    title: product.title,
-                    price: product.price,
+                    id: productId,
+                    title: productTitle,
+                    price: productPrice,
                     quantity: 1,
-                    image: product.images[0]
+                    image: productImage
                 });
             }
             
             updateCart();
-            showNotification(`${product.title} agregado al carrito`);
+            showNotification(`${productTitle} agregado al carrito`);
         }
 
         // Eliminar producto del carrito
@@ -1619,6 +1256,39 @@
             return encodeURIComponent(message);
         }
 
+        // Generar mensaje de WhatsApp para compra directa
+        function generateDirectWhatsAppMessage() {
+            const remitente = getRemitenteInfo();
+            
+            let message = "¡Hola! Quiero comprar el siguiente producto:\n\n";
+            
+            message += `- ${currentDirectProduct.title}: ${formatPrice(currentDirectProduct.price)}\n`;
+            
+            // Añadir costo de envío
+            if (selectedShipping > 0) {
+                message += `- Envío: ${formatPrice(selectedShipping)}\n`;
+            } else {
+                message += `- Envío: Gratis\n`;
+            }
+            
+            const total = currentDirectProduct.price + selectedShipping;
+            message += `\nTotal: ${formatPrice(total)}`;
+            message += `\n\nMi información de envío es:\n`;
+            message += `Nombre: ${directCustomerName.value}\n`;
+            message += `Teléfono: ${directCustomerPhone.value}\n`;
+            message += `Dirección: ${directCustomerAddress.value}\n`;
+            message += `Ciudad: ${directCustomerCity.value}`;
+            
+            // Añadir información del remitente
+            message += `\n\nInformación del remitente:\n`;
+            message += `Negocio: ${remitente.nombre}\n`;
+            message += `Correo: ${remitente.correo}\n`;
+            message += `Dirección: ${remitente.direccion}\n`;
+            message += `Teléfono: ${remitente.telefono}`;
+            
+            return encodeURIComponent(message);
+        }
+
         // Generar mensaje de correo para el carrito
         function generateEmailMessage() {
             const remitente = getRemitenteInfo();
@@ -1646,39 +1316,6 @@
             message += `Ciudad: ${customerCity.value}\n\n`;
             
             message += "INFORMACIÓN DEL REMITENTE:\n";
-            message += `Negocio: ${remitente.nombre}\n`;
-            message += `Correo: ${remitente.correo}\n`;
-            message += `Dirección: ${remitente.direccion}\n`;
-            message += `Teléfono: ${remitente.telefono}`;
-            
-            return encodeURIComponent(message);
-        }
-
-        // Generar mensaje de WhatsApp para compra directa
-        function generateDirectWhatsAppMessage() {
-            const remitente = getRemitenteInfo();
-            
-            let message = "¡Hola! Quiero comprar el siguiente producto:\n\n";
-            
-            message += `- ${currentDirectProduct.title}: ${formatPrice(currentDirectProduct.price)}\n`;
-            
-            // Añadir costo de envío
-            if (selectedShipping > 0) {
-                message += `- Envío: ${formatPrice(selectedShipping)}\n`;
-            } else {
-                message += `- Envío: Gratis\n`;
-            }
-            
-            const total = currentDirectProduct.price + selectedShipping;
-            message += `\nTotal: ${formatPrice(total)}`;
-            message += `\n\nMi información de envío es:\n`;
-            message += `Nombre: ${directCustomerName.value}\n`;
-            message += `Teléfono: ${directCustomerPhone.value}\n`;
-            message += `Dirección: ${directCustomerAddress.value}\n`;
-            message += `Ciudad: ${directCustomerCity.value}`;
-            
-            // Añadir información del remitente
-            message += `\n\nInformación del remitente:\n`;
             message += `Negocio: ${remitente.nombre}\n`;
             message += `Correo: ${remitente.correo}\n`;
             message += `Dirección: ${remitente.direccion}\n`;
@@ -1720,26 +1357,34 @@
             return encodeURIComponent(message);
         }
 
-        // Cargar tabla de precios de proveedor
-        function loadSupplierTable() {
-            supplierTableBody.innerHTML = '';
+        // Abrir modal para compra directa
+        function openDirectPurchase(product) {
+            currentDirectProduct = product;
             
-            products.forEach(product => {
-                const margin = ((product.price - product.warehousePrice) / product.warehousePrice * 100).toFixed(2);
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${product.id}</td>
-                    <td>${product.title}</td>
-                    <td>${product.category}</td>
-                    <td>${formatPrice(product.warehousePrice)}</td>
-                    <td>${formatPrice(product.price)}</td>
-                    <td>${product.supplier}</td>
-                    <td>${margin}%</td>
-                `;
-                supplierTableBody.appendChild(row);
-            });
+            // Mostrar información del producto en el modal
+            directPurchaseProduct.innerHTML = `
+                <img src="${product.image}" alt="${product.title}">
+                <div class="direct-purchase-info">
+                    <h3>${product.title}</h3>
+                    <p class="product-price">${formatPrice(product.price)}</p>
+                </div>
+            `;
             
-            supplierTableContainer.style.display = 'block';
+            // Limpiar formulario
+            directCustomerName.value = '';
+            directCustomerPhone.value = '';
+            directCustomerAddress.value = '';
+            directCustomerCity.value = '';
+            directWhatsappBtn.disabled = true;
+            directEmailBtn.disabled = true;
+            
+            // Resetear opción de envío
+            document.getElementById('direct-shipping-priority').checked = true;
+            selectedShipping = 0;
+            updateShippingOptions();
+            
+            // Mostrar modal
+            directPurchaseModal.style.display = 'flex';
         }
 
         // Event Listeners
@@ -1806,14 +1451,18 @@
             window.open(`mailto:calivalle@qrcontraentrega.com?subject=${subject}&body=${message}`, '_blank');
         });
 
-        searchInput.addEventListener('input', filterProducts);
+        // Botones de producto
+        addToCartButton.addEventListener('click', () => {
+            addToCart(
+                currentProduct.id,
+                currentProduct.title,
+                currentProduct.price,
+                currentProduct.image
+            );
+        });
 
-        categoryBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                categoryBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                filterProducts();
-            });
+        buyNowButton.addEventListener('click', () => {
+            openDirectPurchase(currentProduct);
         });
 
         // Event listeners para opciones de envío
@@ -1837,22 +1486,6 @@
         directCustomerAddress.addEventListener('input', validateDirectCheckoutButton);
         directCustomerCity.addEventListener('input', validateDirectCheckoutButton);
 
-        // Acceso de administrador
-        adminAccessBtn.addEventListener('click', () => {
-            if (adminKeyInput.value === ADMIN_KEY) {
-                loadSupplierTable();
-                showNotification('Acceso concedido. Tabla de proveedores cargada.');
-            } else {
-                showNotification('Clave incorrecta. Intenta nuevamente.');
-            }
-        });
-
-        adminKeyInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                adminAccessBtn.click();
-            }
-        });
-
         // Cerrar modal al hacer clic fuera de él
         window.addEventListener('click', (e) => {
             if (e.target === cartModal) {
@@ -1864,7 +1497,7 @@
         });
 
         // Inicializar la página
-        loadProducts(products);
+        updateCart();
     </script>
 </body>
 </html>
